@@ -44,12 +44,35 @@ We propose two ensemble models:
 - **Ensemble B**: A hybrid approach using a multi-class classifier and three binary classifiers focusing on emotions with lower recall (fear, sadness, and disgust).
 
 ### Aggregation Methods
-To combine model predictions, we experiment with:
-1. **Majority Voting** (Eq. 1)
-2. **Simple Averaging** (Eq. 2)
-4. **Weighted Averaging** (Eq 3)
-<img width="1160" alt="Formula" src="https://github.com/user-attachments/assets/4fe2362a-943e-44a8-b582-9c3cabe000af" />
 
+
+Each model in the ensemble predicts a probability for each facial expression class, with different weighting factors assigned to account for model strengths. The total number of networks in the ensemble is denoted by $B$, and predictions are combined using different aggregation methods. The indicator function $I(.)$ ensures that relevant conditions are met for classification. The predicted label from each model is represented as $y_b$, while $f_{b,c}$ indicates the probability assigned to class $c$ by model $b$. The normalized weight $w_{b,c}$ adjusts the final prediction to enhance accuracy by leveraging model-specific performance variations.
+
+
+#### Majority Voting:
+```math
+\hat{y} = \arg\max_c \sum_{b=1}^{B} I(y_b = c)
+```
+
+#### Simple Averaging:
+```math
+\hat{y} = \arg\max_c \frac{1}{B} \sum_{b=1}^{B} f_{b,c}
+```
+
+#### Weighted Averaging:
+```math
+\hat{y} = \arg\max_c \sum_{b=1}^{B} w_{b,c} f_{b,c}
+```
+
+### Definitions
+- $c$ is the facial expression class index.
+- $B$ is the total number of networks in the ensemble.
+- $I(.)$ is the indicator function, which equals $1$ if the condition inside the function is true and $0$ otherwise.
+- $y_b$ is the predicted label from model $b$.
+- $f_{b,c}$ is the predicted probability for class $c$ from model $b$.
+- $w_{b,c}$ is the normalized weight of prediction probabilities for class $c$ from model $b$.
+
+Each model has different weighting factors, and each class within every model can also have different weighting factors to account for individual model strengths and weaknesses.
 
 ## Experiment
 ### Dataset
@@ -62,13 +85,19 @@ We use the **FER-2013** dataset, which contains 35,887 grayscale images across s
 - **Models Initialized with Pre-trained Weights**
 
 ### Results
-| Model | Aggregation | Accuracy (%) | Training Time | Parameters (M) | MACs (G) |
-|--------|-------------|-------------|----------------|---------------|----------|
-| **Ensemble A** | Simple Average | **67.01** | **35m 28s** | 10.30 | 1.08 |
-| **Ensemble A** | Majority Vote | 66.56 | 35m 28s | - | - |
-| **Ensemble B** | Simple Average | 60.30 | 72m 12s | 19.14 | 1.64 |
-| **EfficientNet B3** | - | 68.62 | 85m 48s | 10.71 | 1.93 |
-| **Human Accuracy** | - | 65.00 | - | - | - |
+<img width="699" alt="image" src="https://github.com/user-attachments/assets/dd73fc45-c05a-4e06-a220-eff93c9e4de6" />
+## Performance Evaluations on FER-2013 Test Set
+
+| Model          | Aggregation      | Accuracy (%) | Training Time | Params (M) | MACs (G) |
+|---------------|-----------------|--------------|---------------|------------|----------|
+| **Ensemble A** | Majority vote   | 66.56        | 35m 28s       | -          | -        |
+|               | Simple average  | **67.01**    | -             | 10.30      | 1.08     |
+|               | Weighted average | 66.95        | -             | -          | -        |
+| **Ensemble B** | Majority vote   | 60.99        | 72m 12s       | -          | -        |
+|               | Simple average  | 60.30        | -             | 19.14      | 1.64     |
+|               | Weighted average | 56.03        | -             | -          | -        |
+| **EfficientNet B3** | -          | **68.62**    | 85m 48s       | 10.71      | 1.93     |
+| **Human accuracy**  | -          | 65.00        | -             | -          | -        |
 
 Our results show that Ensemble A closely matches the accuracy of EfficientNet B3 while training twice as fast.
 
