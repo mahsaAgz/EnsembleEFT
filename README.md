@@ -90,14 +90,15 @@ We use the **FER-2013** dataset, which contains 35,887 grayscale images across s
 
 | Model          | Aggregation      | Accuracy (%) | Training Time | Params (M) | MACs (G) |
 |---------------|-----------------|--------------|---------------|------------|----------|
-| **Ensemble A** | Majority vote   | 66.56        | 35m 28s       | -          | -        |
-|               | Simple average  | **67.01**    | -             | 10.30      | 1.08     |
-|               | Weighted average | 66.95        | -             | -          | -        |
-| **Ensemble B** | Majority vote   | 60.99        | 72m 12s       | -          | -        |
-|               | Simple average  | 60.30        | -             | 19.14      | 1.64     |
-|               | Weighted average | 56.03        | -             | -          | -        |
+| **Ensemble A** | Majority vote   | 66.56        | 35m 28s       | 10.30      | 1.08     |
+|               | Simple average  | **67.01**    | 35m 28s       | 10.30      | 1.08     |
+|               | Weighted average | 66.95        | 35m 28s       | 10.30      | 1.08     |
+| **Ensemble B** | Majority vote   | 60.99        | 72m 12s       | 19.14      | 1.64     |
+|               | Simple average  | 60.30        | 72m 12s       | 19.14      | 1.64     |
+|               | Weighted average | 56.03        | 72m 12s       | 19.14      | 1.64     |
 | **EfficientNet B3** | -          | **68.62**    | 85m 48s       | 10.71      | 1.93     |
 | **Human accuracy**  | -          | 65.00        | -             | -          | -        |
+
 
 Our results show that Ensemble A closely matches the accuracy of EfficientNet B3 while training twice as fast.
 
