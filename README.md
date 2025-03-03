@@ -45,11 +45,11 @@ We propose two ensemble models:
 
 ### Aggregation Methods
 To combine model predictions, we experiment with:
-1. **Majority Voting**
-2. **Simple Averaging**
-3. **Weighted Averaging**
+1. **Majority Voting** (Eq. 1)
+2. **Simple Averaging** (Eq. 2)
+4. **Weighted Averaging** (Eq 3)
+<img width="1160" alt="Formula" src="https://github.com/user-attachments/assets/4fe2362a-943e-44a8-b582-9c3cabe000af" />
 
-Mathematical formulations are included in the full paper.
 
 ## Experiment
 ### Dataset
