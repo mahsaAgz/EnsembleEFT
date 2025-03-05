@@ -23,7 +23,6 @@ Email: [hampusf@kaist.ac.kr](mailto:hampusf@kaist.ac.kr)
 Graduate School of Data Science, KAIST  
 Email: [zuvuilst@kaist.ac.kr](mailto:zuvuilst@kaist.ac.kr)  
 
----
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Methodology](#methodology)
