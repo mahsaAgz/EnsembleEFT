@@ -35,8 +35,7 @@ This research aims to provide insights into the trade-offs between accuracy and 
 
 ## Methodology
 ***Ensemble deep learning for facial expression recognition.*** The training process is done using different bootstrap samples to ensure that each network learns different features from the FER 2013 dataset. To further increase the diversity of learned features [2], each network is selected from a variety of unique compact architecture families—ShuffleNet[11], MobileNet[4], and SqueezeNet[5]—that have different approaches for extracting features efficiently from the image, as shown in Figure 3.
-<img width="1189" alt="Screenshot 2025-03-05 at 9 23 58 AM" src="https://github.com/user-attachments/assets/5c5a2a98-545c-4457-bec1-724b7d805356" />
-
+<img width="1189" alt="figure3" src="https://github.com/user-attachments/assets/a9150554-b5c5-4856-8287-d436efa12f62" />
 
 Furthermore, we explored using one vs rest binary classifiers as the ensemble member candidate, to encourage complementary interaction between the ensemble member. This way, some member could focus on learning difficult facial expressions and others can focus on other expressions.
 
@@ -45,12 +44,10 @@ Individual predictions from each model are then combined using some aggregation 
 We explored 2 ensemble model with different members:
 Ensemble A (All multi-class classifiers): ShuffleNet, MobileNet, and SqueezeNet
 Ensemble B (With binary classifiers): MobileNet (multi), ShuffleNet (Fear), ShuffleNet (Disgust), and MobileNet (Sad)
-
-<img width="1189" alt="Screenshot 2025-03-05 at 9 25 17 AM" src="https://github.com/user-attachments/assets/2e534c9c-5e9b-4e99-8d2c-230de9b6a78b" />
+<img width="1189" alt="figure2" src="https://github.com/user-attachments/assets/c6257f84-4798-41a5-a51f-c872e63a5b55" />
 
 Ensemble B clarification: We chose to predict disgust, fear, and anger separately due to their consistently low recall in individual models. For each expression, we trained the architecture with the highest recall as a binary classifier, which improved prediction accuracy. For instance, as shown in Figure 4, ShuffleNet correctly identified fear by focusing on the eyes, while MobileNet misclassified it by focusing on the mouth and nose. This approach enhanced the performance of our emotion recognition system.
-
-<img width="699" alt="image" src="https://github.com/user-attachments/assets/dd73fc45-c05a-4e06-a220-eff93c9e4de6" />
+<img width="1289" alt="figure4" src="https://github.com/user-attachments/assets/1766bbd7-a2b7-45ef-ab0f-d04ce08f46f7" />
 
 ### Aggregation Methods
 
