@@ -38,10 +38,13 @@ Deep learning models such as CNNs have significantly improved FER accuracy. Stud
 
 ## Proposed Method: Ensemble Deep Learning for FER
 We propose two ensemble models:
-<img width="1160" alt="image" src="https://github.com/user-attachments/assets/aa7c472f-ccc7-46b9-9540-4c0adb95ed71" />
-
+<img width="1189" alt="Screenshot 2025-03-05 at 9 25 17 AM" src="https://github.com/user-attachments/assets/72830a02-e00b-44aa-86f5-d8f2e25c4c89" />
 - **Ensemble A**: Three multi-class classifiers (ShuffleNet, MobileNet, and SqueezeNet) trained with different data samples.
+
+Our preliminary results (Figure 3) showed that these models consistently have lower recall on three emotions: fear, sadness, and disgust. So, we propose another ensemble architecture (Ensemble B, Figure 2) that has one multi-classifier network and three binary-classifier networks for detecting these emotions. For each expression, we trained the architecture with the highest recall as a binary classifier to improve the accuracy.
+
 - **Ensemble B**: A hybrid approach using a multi-class classifier and three binary classifiers focusing on emotions with lower recall (fear, sadness, and disgust).
+<img width="1189" alt="Screenshot 2025-03-05 at 9 23 58 AM" src="https://github.com/user-attachments/assets/0699792b-47c7-4c17-905f-b000b8a7681f" />
 
 ### Aggregation Methods
 
