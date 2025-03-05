@@ -1,8 +1,6 @@
 # Efficient Ensemble Model for Facial Expression Recognition
 
-## Overview 
-This repository contains Ensemble Model for Facial Expression Recognition developed for Machine learning for Data Science(DS503) course at KAIST. The project focuses on investigating the performance in terms of accuracy and efficiency of FER when combining small models utilizing ensemble methods with those of a large model.
-## Table of Contents
+
 ## Authors
 
 **Aghazadeh Mahsa**  
@@ -26,6 +24,7 @@ Graduate School of Data Science, KAIST
 Email: [zuvuilst@kaist.ac.kr](mailto:zuvuilst@kaist.ac.kr)  
 
 ---
+## Table of Contents
 1. [Introduction](#introduction)
 2. [Methodology](#methodology)
    - [Ensemble Deep Learning for Facial Expression Recognition](#ensemble-deep-learning-for-facial-expression-recognition)
