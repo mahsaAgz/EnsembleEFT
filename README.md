@@ -1,10 +1,14 @@
 # Efficient Ensemble Model for Facial Expression Recognition
-
+## Table of Contents
 ## Authors
 
 **Aghazadeh Mahsa**  
 Graduate School of Data Science, KAIST  
 Email: [mahsa_agz@kaist.ac.kr](mailto:mahsa_agz@kaist.ac.kr)  
+
+**Thoriq Dimas Ahmad**  
+Graduate School of Data Science, KAIST  
+Email: [dimasat@kaist.ac.kr](mailto:dimasat@kaist.ac.kr)  
 
 **Devira Fania Ardelia**  
 Graduate School of Data Science, KAIST  
@@ -18,11 +22,21 @@ Email: [hampusf@kaist.ac.kr](mailto:hampusf@kaist.ac.kr)
 Graduate School of Data Science, KAIST  
 Email: [zuvuilst@kaist.ac.kr](mailto:zuvuilst@kaist.ac.kr)  
 
-**Thoriq Dimas Ahmad**  
-Graduate School of Data Science, KAIST  
-Email: [dimasat@kaist.ac.kr](mailto:dimasat@kaist.ac.kr)  
-
 ---
+1. [Introduction](#introduction)
+2. [Methodology](#methodology)
+   - [Ensemble Deep Learning for Facial Expression Recognition](#ensemble-deep-learning-for-facial-expression-recognition)
+   - [Aggregation Methods](#aggregation-methods)
+3. [Experiment](#experiment)
+   - [Dataset](#dataset)
+   - [Training Setup](#training-setup)
+   - [Results](#results)
+4. [Discussion](#discussion)
+5. [Conclusion](#conclusion)
+6. [References](#references)
+7. [Installation](#installation)
+
+
 ## Introduction
 Recent studies have developed implementations of deep learning models for facial expression recognition (FER) tasks because of their potential application in evaluating customer service satisfaction, human-computer interaction systems, and the development of accessibility features for disability-inclusive systems [6]. 
 
@@ -34,7 +48,8 @@ We test various ensemble methods, including majority voting, simple averaging an
 This research aims to provide insights into the trade-offs between accuracy and efficiency in FER, offering practical solutions for real-world applications where computational resources are limited.
 
 ## Methodology
-***Ensemble deep learning for facial expression recognition.*** The training process is done using different bootstrap samples to ensure that each network learns different features from the FER 2013 dataset. To further increase the diversity of learned features [2], each network is selected from a variety of unique compact architecture families—ShuffleNet[11], MobileNet[4], and SqueezeNet[5]—that have different approaches for extracting features efficiently from the image, as shown in Figure 3.
+### Ensemble deep learning for facial expression recognition.
+The training process is done using different bootstrap samples to ensure that each network learns different features from the FER 2013 dataset. To further increase the diversity of learned features [2], each network is selected from a variety of unique compact architecture families—ShuffleNet[11], MobileNet[4], and SqueezeNet[5]—that have different approaches for extracting features efficiently from the image, as shown in Figure 3.
 <img width="1189" alt="figure3" src="https://github.com/user-attachments/assets/a9150554-b5c5-4856-8287-d436efa12f62" />
 
 Furthermore, we explored using one vs rest binary classifiers as the ensemble member candidate, to encourage complementary interaction between the ensemble member. This way, some member could focus on learning difficult facial expressions and others can focus on other expressions.
@@ -142,5 +157,12 @@ These findings suggest that it is possible to create a high-performance classifi
 11. Zhang, Xiangyu, et al. "Shufflenet: An extremely efficient convolutional neural network for mobile devices." Proceedings of the IEEE CVPR. arxiv:1707.01083, 2018.
 
 
-## Code and Data Availability
+## Installation
 
+The dataset and trained models used in this study are available for public access. 
+
+- **Dataset**: [here](https://drive.google.com/uc?id=1TOiNfQdH8GVWcNBC9v_YktuwXCbdLuq-) 
+- **Trained Models**: [here](https://drive.google.com/uc?id=1DFo9738zbmV1MJ2h5tQzO3BEk-Iulf4i)
+- **Google Colab Notebook**: The experiment can be replicated in a Colab environment for optimal performance. The notebook can be accessed here: [link](https://colab.research.google.com/drive/1ssc930UmTXBqlF0JMkIio6IYtDZJ3h0J#scrollTo=HldvGAUHme0g)
+
+To run the experiment locally, download the `ensembleFER.ipynb` notebook and execute it in a compatible environment. 
