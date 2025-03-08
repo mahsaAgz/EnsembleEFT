@@ -1,8 +1,8 @@
 # Efficient Ensemble Model for Facial Expression Recognition
 
 ## Overview
-This repository contains the ensemble learning for Facial expression recognition (FER) project for the Machine learning for Data Science (DS503) course at KAIST. You can find the details in final_report.pdf and poster.png
-
+This repository contains the Ensemble Learning for Facial Expression Recognition (FER) project for the Machine Learning for Data Science (DS503) course at KAIST.
+For more details, refer to final_report.pdf and poster.png.
 
 
 Facial expression recognition (FER) is an essential task in human-computer interaction, customer satisfaction analysis, and accessibility solutions. However, modern deep learning models often require significant computational resources. This project explores **ensemble learning** as an alternative to scaling up deep learning models. We compare **compact models** using ensembling techniques to a large-scale model to determine whether similar accuracy can be achieved with lower computational cost.
