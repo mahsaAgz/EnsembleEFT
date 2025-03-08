@@ -72,14 +72,13 @@ We use the **FER-2013** dataset, which contains 35,887 grayscale images across s
 Our results indicate that **compact multi-class ensemble models can achieve high accuracy while reducing computational cost**. Future work can focus on **optimizing ensemble selection** and **exploring adaptive weighting strategies**.
 
 ## Contributors
+**Thoriq Dimas Ahmad**  
+Graduate School of Data Science, KAIST  
+Email: [dimasat@kaist.ac.kr](mailto:dimasat@kaist.ac.kr)  
 
 **Aghazadeh Mahsa**  
 Graduate School of Data Science, KAIST  
 Email: [mahsa_agz@kaist.ac.kr](mailto:mahsa_agz@kaist.ac.kr)  
-
-**Thoriq Dimas Ahmad**  
-Graduate School of Data Science, KAIST  
-Email: [dimasat@kaist.ac.kr](mailto:dimasat@kaist.ac.kr)  
 
 **Devira Fania Ardelia**  
 Graduate School of Data Science, KAIST  
