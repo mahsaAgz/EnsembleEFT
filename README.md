@@ -19,10 +19,7 @@ Download the dataset and trained models:
 - **Trained Models**: [Download](https://drive.google.com/uc?id=1DFo9738zbmV1MJ2h5tQzO3BEk-Iulf4i)
 - **Google Colab Notebook**: [Open in Colab](https://colab.research.google.com/drive/1ssc930UmTXBqlF0JMkIio6IYtDZJ3h0J#scrollTo=HldvGAUHme0g)
 
-To run locally:
-```bash
-python ensembleFER.ipynb
-```
+
 
 ## Methodology
 Our approach involves training **compact architectures** using diverse training samples to ensure model diversity.
